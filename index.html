@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap" rel="stylesheet">
+  <title>Registration Form</title>
+
+  <style>
+    /* font */
+    @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@600&display=swap');
+
+    /* register form */
+    body {
+      background: linear-gradient(to bottom right, #BBA0BA, #00D2FF);
+     }
+
+
+    .signup-form {
+      font-family: 'Spartan', sans-serif;
+      color:#9B1C31;
+      width: 650px;
+      margin: 30px auto;
+      background: linear-gradient(to right, #3a7bd5, #3a6073);
+      border-radius: 10px;
+    }
+
+    /* form header */
+    .form-header {
+      background: #EACDA3;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .form-header h1 {
+      font-size: 30px;
+      text-align: center;
+      color: #666;
+      padding: 20px 0;
+      border-bottom: 1px solid #cccccc;
+    }
+
+    /* form body */
+    .form-body {
+      padding: 10px 40px;
+      color: #666;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-body .label-title {
+      color: #1BBA93;
+      font-size: 17px;
+      font-weight: bold;
+
+    }
+
+    .form-body .form-input {
+      font-size: 17px;
+      box-sizing: border-box;
+      width: 100%;
+      height: 34px;
+      padding-left: 10px;
+      color: #333333;
+      text-align: left;
+      border: 1px solid #d6d6d6;
+      border-radius: 4px;
+      background: white;
+      outline: none;
+    }
+
+    .horizontal-group .left {
+      float: left;
+      width: 49%;
+    }
+
+    .horizontal-group .right {
+      float: right;
+      width: 49%;
+    }
+
+    input[type="file"] {
+      outline: none;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    #range-label {
+      width: 15%;
+      padding: 5px;
+      background: #BBA0BA;
+      color: white;
+      border-radius: 5px;
+      font-size: 17px;
+      position: relative;
+      top: -8px;
+    }
+
+    ::-webkit-input-placeholder {
+      color: #d9d9d9;
+    }
+
+    /* form footer */
+    .signup-form .form-footer {
+      background-color: #EFF0F1;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      padding: 10px 40px;
+      text-align: right;
+      border-top: 1px solid #cccccc;
+      clear: both;
+    }
+
+    .form-footer span {
+      float: left;
+      margin-top: 10px;
+      color: #999;
+      font-size: italic;
+      font-weight: thin;
+    }
+
+    #myButton{
+      display: inline-block;
+      padding: 10px 20px;
+      background: #8DC7E9;
+      font-size: 17px;
+      border: none;
+      border-radius: 5px;
+      color: #4680CB;
+      cursor: pointer;
+
+    }
+
+    .btn:hover {
+      background-color: #169c7b;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <form class="signup-form" action="/register" method="post">
+
+    <!-- form header -->
+    <div class="form-header">
+      <h1>Create Account</h1>
+    </div>
+
+    <!-- form body -->
+    <div class="form body">
+
+      <!-- Firstname and Lastname -->
+      <div class="horizontal-group">
+        <div class="form-group left">
+          <label for="firstname" class="label-title">First Name</label>
+          <input type="text" id="lastname" class="form-input" placeholder="enter your first name" required="required" />
+        </div>
+        <div class="form-group right">
+          <label for="lastname" class="label-title">Last Name</label>
+          <input type="text" id="lastname" class="form-input" placeholder="enter your last name" />
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email" class="label-title">Email *</label>
+        <input type="email" id="email" class="form-input" placeholder="enter your email" required="required">
+      </div>
+
+      <!-- password and confirm password -->
+      <div class="horizontal-group">
+        <div class="form group left">
+          <label for="password" class="label-title">Password *</label>
+          <input type="password" id="password" class="form-input" placeholder="enter your password" required="required">
+        </div>
+      </div>
+
+      <!-- Gender and Hobbies -->
+      <div class="horizontal-group">
+        <div class="form-group left">
+          <label class="label-title">Gender:<label>
+              <div class="input-group">
+                <label for="male"><input type="radio" name="gender" value="male" id="male">Male</label>
+                <label for="female"><input type="radio" name="gender" value="female" id="female">Female</label>
+              </div>
+        </div>
+        <div class="form-group right">
+          <label class="label-title">Hobbies</label>
+          <div>
+            <label><input type="checkbox" value="web">Spotify</label>
+            <label><input type="checkbox" value="iOS">F1 Racing</label>
+            <label><input type="checkbox" value="Android">Personal Travel</label>
+            <label><input type="checkbox" value="Gameon-Lamon">Netflix</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Source of income and Salary -->
+      <div class="horizontal-group">
+        <div class="form-group left">
+          <label class="label-title">Source of Income</label>
+          <select class="form-input" id="level">
+            <option value="B">Employed</option>
+            <option value="I">Self-Employed</option>
+            <option value="A">Unemployed</option>
+          </select>
+        </div>
+        <div class="form-group right">
+          <label for="experience" class="label-title">Income</label>
+          <input type="range" min="20" max="100" step="5" value="0" id="expeirience" class="form-imput" onChange="change();" style="height:28px; width:78%; padding:0;">
+          <span id="range-label">20k</span>
+        </div>
+      </div>
+
+      <!-- Profile picture and Age -->
+      <div class="horizontal-group">
+        <div class="form-group left">
+          <label for="choose-file" size="80">
+        </div>
+        <div class="form-group right">
+          <label for="experience" class="label-title">Age</label>
+          <input type="number" min="18" max="89" class="form-input">
+        </div>
+      </div>
+
+      <!-- Bio -->
+      <div class="form-group" right>
+        <label for="choose file" class="label-title">Bio</label>
+        <textarea class="form-input" rows="4" cols="50" style="height:auto"></textarea>
+      </div>
+    </div>
+
+    <!-- form footer -->
+    <div class="form-footer">
+      <span>* required</span>
+      <button id="myButton" class="float-left submit-button">Create Account</button>
+    </div>
+  </form>
+
+  <!-- script for range input label -->
+  <script>
+    var rangeLabel = document.getElementById("range-label");
+    var experience = document.getElementById("experience");
+
+    function change() {
+      rangeLabel.innerText = experience.value + "K";
+    }
+
+    document.getElementById("myButton").onclick = function () {
+        location.href = "https://variety.com/lists/2021-oscars-predictions-the-collective/";
+    };
+
+  </script>
+
+</body>
+
+</html>
